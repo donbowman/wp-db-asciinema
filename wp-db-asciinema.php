@@ -44,6 +44,7 @@ function asciinema_video( $atts ) {
             'autoplay' => false,
             'time' => '0',
             'loop' => false,
+            'poster' => '',
             'speed' => 1
         ), $atts )
     );
@@ -56,6 +57,7 @@ function asciinema_video( $atts ) {
     $vs .= "speed: "    . $speed . ",\n";
     $vs .= "theme: '"   . $theme . "',\n";
     $vs .= "title: '"   . $title . "',\n";
+    $vs .= "poster: '"  . $poster ."',\n";
     $vs .= "autoPlay: " . $apt . ",\n";
     $vs .= "time: "     . $time . ",\n";
     $vs .= "loop: "     . $loopt . "}\n";

@@ -3,7 +3,7 @@ Embed asciinema-created videos into your wordpress blog (local storage)
 
 # Usage
 
-    [asciinema video=url [,theme=name] [,title=] [,autoplay=true|false] [,loop=true|false] [speed=#] ]
+    [asciinema video=url [,theme=name] [,title=] [,autoplay=true|false] [,loop=true|false] [speed=#] [poster=] ]
 
 The only required parameter is the url, e.g. /wp-content/uploads/2016-04/foo.json
 
