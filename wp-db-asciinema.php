@@ -51,14 +51,15 @@ function asciinema_video( $atts ) {
 
     $apt = ($autoplay) ? 'true' : 'false';
     $loopt = ($loop) ? 'true' : 'false';
+    $poster = wptexturize($poster);
 
     $vs = '<div id="player-container"></div>' . "\n";
     $vs .= "<script>asciinema.player.js.CreatePlayer('player-container', '" . $video . "', {";
     $vs .= "speed: "    . $speed . ",\n";
     $vs .= "theme: '"   . $theme . "',\n";
     $vs .= "title: '"   . $title . "',\n";
-    $vs .= "poster: '"  . $poster ."',\n";
     $vs .= "autoPlay: " . $apt . ",\n";
+    $vs .= "poster: 'data:text/plain,"  . $poster ."',\n";
     $vs .= "time: "     . $time . ",\n";
     $vs .= "loop: "     . $loopt . "}\n";
     $vs .= ");\n</script>";
@@ -72,3 +73,4 @@ function asciinema_mime($mime_types) {
   return $mime_types;
 }
 add_filter('upload_mimes', 'asciinema_mime', 1, 1);
+remove_filter('the_content', 'wptexturize');
